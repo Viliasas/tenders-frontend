@@ -9,7 +9,7 @@ module.exports = (env) => {
         entry: './app/app.module.js',
         output: {
             filename: 'app.bundle.js',
-            path: path.resolve(__dirname, 'dist'),
+            path: path.resolve(__dirname, 'public/js'),
         },
         module: {
             rules: [
