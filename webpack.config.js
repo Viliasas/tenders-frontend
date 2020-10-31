@@ -25,7 +25,7 @@ module.exports = (env) => {
                 },
                 {
                     test: /\.html$/,
-                    loader: 'html',
+                    loader: 'html-loader',
                 },
                 {
                     test: /\.css$/,
