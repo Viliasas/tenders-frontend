@@ -2,11 +2,11 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import routes from './app.routes';
-import tenors from './tenors';
+import tenders from './tenders';
 
 angular
     .module('app', [
         uiRouter,
-        tenors,
+        tenders,
     ])
     .config(routes);

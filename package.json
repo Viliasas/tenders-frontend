@@ -1,5 +1,5 @@
 {
-  "name": "tenor-frontend",
+  "name": "tenders-frontend",
   "version": "1.0.0",
   "description": "Tender CRUD. You need to create list of tenders with ability to update, delete and create new tender.",
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Viliasas/tenor-frontend.git"
+    "url": "git+https://github.com/Viliasas/tenders-frontend.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Viliasas/tenor-frontend/issues"
+    "url": "https://github.com/Viliasas/tenders-frontend/issues"
   },
-  "homepage": "https://github.com/Viliasas/tenor-frontend#readme",
+  "homepage": "https://github.com/Viliasas/tenders-frontend#readme",
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.17.1"

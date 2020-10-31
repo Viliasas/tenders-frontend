@@ -2,12 +2,12 @@ routes.$inject = ['$stateProvider'];
 
 export default function routes($stateProvider) {
     $stateProvider
-        .state('tenors', {
+        .state('tenders', {
             url: '/',
-            template: require('./tenors.html'),
+            template: require('./tenders.html'),
             resolve: {
-                tenors: ['tenorsService', (tenorsService) => {
-                    return tenorsService.getTenors();
+                tenders: ['tendersService', (tendersService) => {
+                    return tendersService.getTenders();
                 }],
             }
         });
