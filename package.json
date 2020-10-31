@@ -1,0 +1,47 @@
+{
+  "name": "tenor-frontend",
+  "version": "1.0.0",
+  "description": "Tender CRUD. You need to create list of tenders with ability to update, delete and create new tender.",
+  "scripts": {
+    "build": "webpack --env.watch=false --env.mode='development' --progress",
+    "watch": "webpack --env.watch=true --env.mode='development' --progress",
+    "build-prod": "webpack --env.mode='production' --progress",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viliasas/tenor-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Viliasas/tenor-frontend/issues"
+  },
+  "homepage": "https://github.com/Viliasas/tenor-frontend#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "angular": "^1.8.2",
+    "angular-ui-router": "^1.0.28",
+    "babel-loader": "^8.1.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "useBuiltIns": "usage",
+          "corejs": "2.0.0"
+        }
+      ]
+    ]
+  },
+  "browserslist": [
+    "last 1 version",
+    "ie >= 11"
+  ]
+}
