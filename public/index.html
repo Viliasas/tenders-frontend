@@ -5,9 +5,19 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Tenders</title>
+    <link type="text/css" href="assets/app.shell.css" rel="stylesheet"/>
 </head>
 <body>
-<div ui-view></div>
-<script src="js/app.bundle.js"></script>
+<div class="container">
+    <nav class="navbar fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Tenders</a>
+    </nav>
+    <div ui-view></div>
+</div>
+<link rel="stylesheet" href="assets/app.css" media="print" onload="this.media='all'; this.onload=null;"/>
+<noscript>
+    <link rel="stylesheet" href="assets/app.css"/>
+</noscript>
+<script src="assets/app.js"></script>
 </body>
 </html>

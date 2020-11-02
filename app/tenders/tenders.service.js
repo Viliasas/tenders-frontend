@@ -5,7 +5,7 @@ export default class TendersService {
     }
 
     getTenders() {
-        return {data: [{title: 'First tender'}]};
+        return {data: [{id: 1, title: 'First tender'}, {id: 2, title: 'Second tender'}]};
         //return this.$http.get(''); // TODO Change this after API is done
     }
 

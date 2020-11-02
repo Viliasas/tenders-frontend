@@ -1,15 +1,19 @@
 // Import dependencies
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env) => {
     return {
         watch: env.watch === 'true',
         mode: env.mode,
-        entry: './app/app.module.js',
+        entry: {
+            ['app']: './app/app.module.js',
+            ['app.shell']: './styles/app-shell.scss',
+        },
         output: {
-            filename: 'app.bundle.js',
-            path: path.resolve(__dirname, 'public/js'),
+            filename: '[name].js',
+            path: path.resolve(__dirname, 'public/assets'),
         },
         module: {
             rules: [
@@ -28,17 +32,34 @@ module.exports = (env) => {
                     loader: 'html-loader',
                 },
                 {
-                    test: /\.css$/,
+                    test: /\.(sa|sc|c)ss$/,
                     use: [
-                        'style-loader',
-                        'css-loader',
+                        {
+                            loader: MiniCssExtractPlugin.loader,
+                        },
+                        {loader: 'css-loader'},
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: function () {
+                                    return [
+                                        require('precss'),
+                                        require('autoprefixer'),
+                                    ];
+                                },
+                            },
+                        },
+                        {loader: 'sass-loader'},
                     ],
                 },
             ]
         },
-        devtool: 'inline-source-map',
+        devtool: 'source-map',
         plugins: [
             new FriendlyErrorsWebpackPlugin(),
+            new MiniCssExtractPlugin({
+                filename: '[name].css',
+            }),
         ],
     };
 }
