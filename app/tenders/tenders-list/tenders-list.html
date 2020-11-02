@@ -7,10 +7,17 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="tender in $ctrl.tenders">
+    <tr ng-if="$ctrl.tenders.length" ng-repeat="tender in $ctrl.tenders">
         <td scope="row">{{ tender.id }}</td>
-        <td>{{ tender.title }}</td>
+        <td>
+            <a ui-sref="tender({ tenderId: tender.id })">
+                {{ tender.title }}
+            </a>
+        </td>
         <td>-</td>
+    </tr>
+    <tr ng-if="!$ctrl.tenders.length">
+        <td colspan="3" class="text-center">No tenders found</td>
     </tr>
     </tbody>
 </table>

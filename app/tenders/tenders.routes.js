@@ -11,4 +11,16 @@ export default function routes($stateProvider) {
                 }],
             }
         });
+    
+    $stateProvider
+        .state('tender', {
+            url: '/tenders/{tenderId}',
+            template: require('./tender-details/tender-details.html'),
+            resolve: {
+                tender: ['tendersService', '$transition$', (tendersService, $transition$) => {
+                    console.log($transition$.params());
+                    return tendersService.getTender($transition$.params().tenderId);
+                }],
+            }
+        });
 }
